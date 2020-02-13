@@ -1,0 +1,24 @@
+﻿@model IEnumerable<WebApp.ViewModels.RoomViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Alla rum</h1>
+
+<p>
+    <a asp-action="Create">Skapa rum</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SchoolName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
