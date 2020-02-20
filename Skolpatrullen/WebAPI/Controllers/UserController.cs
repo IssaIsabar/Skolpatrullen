@@ -66,6 +66,19 @@ namespace WebAPI.Controllers
             }
             return response;
         }
+        [HttpGet]
+        [Route("[controller]/GetUser/{id}")]
+        public APIResponse<User> GetUserById(int id)
+        {
+            APIResponse<User> response = new APIResponse<User>();
+            var user = _context.Users.Where(u => u.Id == id).FirstOrDefault();
+            if (user != null)
+            {
+                response.Success = true;
+                response.Data = user;
+            }
+            return response;
+        }
         [HttpPost]
         [Route("[controller]/GetLoginSession")]
         public APIResponse<LoginSession> GetLoginSession(TokenBody token)
